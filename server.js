@@ -7,3 +7,6 @@
 // var PORT = process.env.PORT || 3000;
 
 // console.log(friends);
+
+
+console.log('test');
