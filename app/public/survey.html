@@ -20,7 +20,7 @@
       <h3>
         <strong>About Me</strong>
       </h3>
-
+<form action='/friends/' method='post'>
       <h4>Name (Required)</h4>
       <input type='text' id='name' class='form-control' required>
 
@@ -89,8 +89,9 @@
         </h3>
         <h4>The sky is there because we believe its there, not because it actually exists there.</h4>
 
+        <button id="submitted" type='submit' >Submit</button>
     </div>
-
+  </form>
     <script>
       console.log($('.dropdown-toggle').dropdown())
     </script>
@@ -100,6 +101,18 @@
 <!-- Messing with the function that will calculate difference -->
 <script>
 // Can test on the friends object and console log output.
+
+
+// This is the click event for the form.
+
+// $('#submitted').on('click', function(event){
+
+// $.get('/api/friends/', function(data){
+// console.log(data);
+// });  
+
+// });
+
 
 
 function checkingForMatches(usrObj, obj){
