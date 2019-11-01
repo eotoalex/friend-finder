@@ -99,40 +99,47 @@
 
 <!-- Messing with the function that will calculate difference -->
 <script>
- var user = [1,3,2,5,4,4,5,2,4,5];
- var arr1 = [5, 1, 4, 4, 5, 1, 2, 5, 4, 1];
- var arr2= [3, 2, 6, 4, 5, 1, 2, 5, 4, 1];
- var arr3 = [5,7,8,3,2,3,4,5,7,8];
+// Can test on the friends object and console log output.
 
 
 function checkingForMatches(usrObj, obj){
  
-  var matchList = {
-    name:'',
-    photo:'',
-    result:0
-  };
+  var matchList = [];
 
-for(var x = 0; x < 10; ){
+for(var x = 0; x < 10; x++ ){
+// This is the survey takers scores array.
 var usrArr = usrObj[x].scores;
 
-
-
+// These properties from the friends object will be stored in a new obj called match list and then evaluated to calculate the difference in scores between the other friends.
 var arr = obj[x].scores;
 var name = obj[x].name;
 var photo = obj[x].photo;
-var result = 0
 
-matchList.name = name;
+// This result will determine whether the friend is a match depending on how low it is in comparison to the rest.
+var result = 0;
+var count = 0;
+
+// Setting the name in the matchlist object, but there might be a problem of overwriting the previous assignment of name so I might need to turn match list into an array that takes in objects.
+// matchList.name = name;
 
   for (var i = 0; i <= arr.length; i++){
-      for(var j = i + 1 ; j < arr.length; j++){
-        if (usrArr[i] < arr[j]){
-        result += arr[j] - usr[i]
-        
-      };
+        if (usrArr[i] < arr[i]){
+        result += (arr[i] - usr[i]); 
+      }else{
+        result += (usrArr[i] - arr[i]);
+      }
   }
-}
+
+  mactchList[count].push(
+    {
+      name:name,
+      photo:photo,
+      diff:result
+    }
+  )
+
+count++;
+
 }
 }
 </script>
