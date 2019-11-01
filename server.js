@@ -36,8 +36,6 @@ app.get("/", function(req, res) {
     res.sendFile(path.join(__dirname, "./app/public/survey.html"));
   });
 
-  
-
 
 
 // app.post('/friends', function(req,res){
