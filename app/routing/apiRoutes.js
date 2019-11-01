@@ -1,10 +1,14 @@
 var friends = require('../data/friends.js');
-var test = require('./htmlRoutes.js');
-var fs = require('fs');
 var express = require('express');
-var path = require ('path');
+var Router = express.Router();
 
-var PORT = process.env.PORT || 3000;
 
-console.log(friends);
+
+Router.get('/friends', function(req,res){
+    res.json(friends);
+    console.log("we are in the apiRoutes folder")
+    
+});
+
+module.exports = Router;
 

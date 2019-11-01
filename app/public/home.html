@@ -4,16 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Link to Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <script src="https://code.jquery.com/jquery.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+
+    <!-- Link to CSS -->
+    <link rel="stylesheet" href="../css/styles.css">
+
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
     <title>Home</title>
 </head>
 <body>
-    
-
   
+    <div class="jumbotron">
+      <h1 class="display-4" ><i class="fa fa-facebook-square" aria-hidden="true"></i> Friend Finder</h1>
+      <hr class="my-4">
+      <p>Answer a few basic questions. <br/></p>
+      <p>Then find the friend with the greatest compatibility!</p>
+      <button id='pushButton' class="btn btn-primary btn-lg">Go to Survey</button>
+    </div>
+
+    <script>
+      // This constrols the go to survey button but it might not be best here to collect data because it is needed to switch to the survey page. Might need to rethink this.
+    $('#pushButton').on('click',function(event){
+      event.preventDefault();
+      $.get('/survey', function(data){
+        console.log(data)
+      });
+    });
+
+    console.log("happy happy");
+    </script>
+
+  <!-- <script type="text/javascript">
+    $.get('/friends',function(data){
+      console.log(data);
+      if(data){
+        console.log('There is data >>>',data)
+      }else{
+        console.log('no data')
+      }
+    });
+    </script> -->
 </body>
 </html>
