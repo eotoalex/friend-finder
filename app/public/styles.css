@@ -6,3 +6,7 @@
 body{
     background-color:black;
 }
+
+.dropdown-options{
+    display:none;
+}

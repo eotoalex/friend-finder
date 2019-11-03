@@ -35,19 +35,48 @@ Router.get('/friends', function(req,res){
 Router.post('/friends',urlencodedParser,function(req,res){
 
 var newUser = req.body;
+var friendsData = friends.friends;
+// var userIndex = arr.length;
 
-friends.friends.push(newUser);
+// var userScore = friends.friends[i].scores[userScore]
+friendsData.push(req.body)
 
-// res.json(newUser);
+// console.log(friendsData,newUser);
 
-console.log(newUser);
-console.log(friends);
-console.log('Length -->'+friends.friends.length);
+checkingForMatches(friendsData,newUser);
+
+res.json(newUser)
 
 
 });
 
+function  checkingForMatches(friendsObj,usr){
+    
+    var usrObj = usr;
+    var arrLength = friendsObj.length
+    var dataObj = friendsObj;
+    var matchList = [];
 
+    // console.log(friendsObj[7].scores);
+    // console.log(typeof friendsObj.length)
+    // console.log(usrObj[friendsObj.length].name);
+    console.log(usr.scores)
 
+    // console.log(usr);
+    
+    // for(var i = 0; i < arrLength; i++){
+    //     var usrScore = friendsObj[i].scores;
+    //     var friendScore = friendsObj[i].scores;
+    //     var scoresLen = friendsObj[i].scores.length
+
+    //     for(var j = 0; j < scoresLen; j++){
+    //         if (usrScore[j] < friendScore[j]){
+    //             result = friendScore[j] - usrScore[j];
+    //         }else{
+    //             result = usrScore[j] - friendScore[j];
+    //         }
+    //     }
+    // }
+}
 module.exports = Router;
 

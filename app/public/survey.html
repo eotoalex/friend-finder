@@ -4,10 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://code.jquery.com/jquery.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+
+   <!-- Link to CSS -->
+   <link rel="stylesheet" href="styles.css">
 
     <title>Survey</title>
 </head>
@@ -33,14 +37,19 @@
         <strong>Question 1</strong>
       </h3>
       <h4>You look to others for support.</h4>
-      <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <div >
+          
+          <div class='drop-down'  >
+          <button class='button-tab' align ='center'>
             Select an Option
-          </button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-            <button class="dropdown-item" type="button">Action</button>
-            <button class="dropdown-item" type="button">Another action</button>
-            <button class="dropdown-item" type="button">Something else here</button>
+            </button>
+            <div class='dropdown-options'>
+            <button class="dropdown-item" type="button" value= '1' display='hide'>1(Strongly Disagree)</button>
+            <button class="dropdown-item" type="button" value= '2'>2</button>
+            <button class="dropdown-item" type="button"value= '3'>3</button>
+            <button class="dropdown-item" type="button"value= '4'>4</button>
+            <button class="dropdown-item" type="button"value= '5'>5(Strongly Agree)</button>
+          </div>
           </div>
         </div>
 
@@ -100,16 +109,7 @@
   var newUser = {
   name:$('#name').val().trim(),
   photo:$('#photo').val().trim(),
-  q1:3,
-  q1:4,
-  q1:5,
-  q1:6,
-  q1:0,
-  q1:8,
-  q1:0,
-  q1:2,
-  q1:1,
-  q1:6
+  scores: [3,5,6,7,8,5,4,6,5,7]
 }
 
 
