@@ -1,6 +1,11 @@
 var friends = require('../data/friends.js');
 var express = require('express');
 var Router = express.Router();
+var bodyParser = require('body-parser');
+
+
+// User data needs to be parsed with this urlencodedParser in order to be accepted into the req.body property in the post request.
+var urlencodedParser = bodyParser.urlencoded({ extended: true });
 
 
 
@@ -27,9 +32,17 @@ Router.get('/friends', function(req,res){
  
 });
 
-Router.post('/friends',function(req,res){
+Router.post('/friends',urlencodedParser,function(req,res){
 
-res.json(req.body)
+var newUser = req.body;
+
+friends.friends.push(newUser);
+
+// res.json(newUser);
+
+console.log(newUser);
+console.log(friends);
+console.log('Length -->'+friends.friends.length);
 
 
 });

@@ -20,7 +20,7 @@
       <h3>
         <strong>About Me</strong>
       </h3>
-<form action='localhost:3000/api/friends' method='post'>
+<form  method='POST' role='form' action='/api/friends'>
       <h4>Name (Required)</h4>
       <input type='text' id='name' class='form-control' required>
 
@@ -93,7 +93,36 @@
     </div>
   </form>
     <script>
-      console.log($('.dropdown-toggle').dropdown())
+
+  $('#submitted').on('click', function(event){
+  event.preventDefault();
+
+  var newUser = {
+  name:$('#name').val().trim(),
+  photo:$('#photo').val().trim(),
+  q1:3,
+  q1:4,
+  q1:5,
+  q1:6,
+  q1:0,
+  q1:8,
+  q1:0,
+  q1:2,
+  q1:1,
+  q1:6
+}
+
+
+
+// This is where we perform the post request to the server and compare the new users data to data already in the system to come up with a match.
+
+      $.post('/api/friends',newUser).
+      then(function(data){
+      console.log(data[0]);
+      });
+
+      });
+
     </script>
 </body>
 </html>
@@ -114,33 +143,6 @@
 // });
 
 
-$('#submitted').on('click', function(event){
-event.preventDefault();
-var newUser = {
-  name:$('#name').val(),
-  photo:$('#photo').val(),
-  q1:3,
-  q1:4,
-  q1:5,
-  q1:6,
-  q1:0,
-  q1:8,
-  q1:0,
-  q1:2,
-  q1:1,
-  q1:6
-}
-
-
-
-// This is where we perform the post request to the server and compare the new users data to data already in the system to come up with a match.
-
-$.post('/api/friends', newUser).
-then(function(data){
-console.log(data);
-});
-
-});
 
 
 
