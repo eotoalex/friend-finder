@@ -12,32 +12,23 @@ const app = express();
 var PORT = process.env.PORT || 3000;
 
 
-// These are the routers to my other pages in the routing folder.
+// This api route leads to the friends object information.
 app.use('/api', routes );
+// This routes will check for user input after the initial slash to ensure that their entry is recognizable, if not the user is routed back to the home page by default.
 app.use("/", htmlRoutes);
 
 
+// This route the user to the home page.
 app.get("/", function(req, res) {
     res.sendFile(path.join(__dirname, "./app/public/home.html"));
   });
 
-  app.get('/:id', function(req, res, next){
-    if (req.params.id === "1"){
-      res.send(req.params.id);
-    }else{
-      // This allows the next handler to take effect (default) if the user puts in an unrecognizable id.
-      next();
-    }
-
-  });
-
+ 
   // This is the default setting for the web page.
   app.get('/:id', function(req, res){
     res.sendFile(path.join(__dirname, "./app/public/home.html"));
 
   });
-
-
 
 
 

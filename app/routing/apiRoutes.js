@@ -23,8 +23,15 @@ var Router = express.Router();
 
 // This takes the middleware .use and the user inputting /api then /friends to access the friends data object.
 Router.get('/friends', function(req,res){
-    res.send(friends.friends);
+    res.json (friends.friends);
  
+});
+
+Router.post('/friends',function(req,res){
+
+res.json(req.body)
+
+
 });
 
 
