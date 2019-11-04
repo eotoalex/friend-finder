@@ -59,52 +59,49 @@ function  checkingForMatches(friendsObj,usr){
     var dataObj = friendsObj;
     
    
-    var result = 0;
+    // var result = 0;
 
-    console.log(arrLength)
+   
 
     
     
 
-    for (var i = 0; i < arrLength; i++){
-        var friendName = friendsObj[i].name;
-        var friendPhoto = friendsObj[i].photo;
+    for (var i = 0; i < arrLength - 1; i++){
         var friendScore = friendsObj[i].scores;
         var scoreTotals=[];
         var matchList = [];
-        
-
-      
-        
-       
-        
+        var result = 0;
     
         for (var j = 0; j < 10; j++){
            
-            result += parseInt(usrScore[j]) - friendScore[j];
+            result += (parseInt(usrScore[j]) - friendScore[j]);
             if(Math.sign(result)===-1){
-                result += result * -1;
+                result += (result * -1);
             }
-            scoreTotals.push(result);
+            
             
 
         }
-        var diff = sumArr (scoreTotals)
         
         
+        // Debug the score totals so that the a correct numbers are subtracted and complete the modal with the images when the match is made.
         matchList.push({
             name:friendsObj[i].name,
             photo:friendsObj[i].photo,
-            diff:scoreTotals,
+            diff:result,
             
         });
-        console.log(matchList);
+
         
-       
+        
+    
        
     }
+    console.log(matchList.length)
    
             // This function takes in an array and adds up all of its properties to determine the total.
+           
+        //    This function has to take in the object and compare the diff values between friends.
             function sumArr (arr){
                 var sum = 0;
                 for(var i = 0; i < arr.length; i++){

@@ -6,9 +6,9 @@ exports.friends = [{
     3,
     4,
     1,
+    2,
+    2,
     3,
-    3,
-    5,
     2,
     2,
     3,
@@ -35,22 +35,6 @@ exports.friends = [{
     name: 'Cindy',
     photo:'url',
     scores:[
-        2,
-        1,
-        5,
-        5,
-        1,
-        4,
-        3,
-        1,
-        2,
-        1,
-    ]
-},
-{
-    name: 'Shantel',
-    photo:'url',
-    scores:[
     2,
     1,
     5,
@@ -64,11 +48,27 @@ exports.friends = [{
     ]
 },
 {
+    name: 'Shantel',
+    photo:'url',
+    scores:[
+    2,
+    1,
+    4,
+    5,
+    1,
+    3,
+    3,
+    1,
+    2,
+    3,
+    ]
+},
+{
     name: 'Boris',
     photo:'url',
     scores:[
     3,
-    1,
+    3,
     1,
     2,
     3,
