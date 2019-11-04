@@ -53,30 +53,45 @@ res.json(newUser)
 function  checkingForMatches(friendsObj,usr){
     
     var usrObj = usr;
+    var usrScore = usr.scores
+    
     var arrLength = friendsObj.length
     var dataObj = friendsObj;
     var matchList = [];
+    var scoreTotals=[];
+    var result = 0;
+    var counter = 0;
 
-    // console.log(friendsObj[7].scores);
-    // console.log(typeof friendsObj.length)
-    // console.log(usrObj[friendsObj.length].name);
-    console.log(usr.scores)
-
-    // console.log(usr);
     
-    // for(var i = 0; i < arrLength; i++){
-    //     var usrScore = friendsObj[i].scores;
-    //     var friendScore = friendsObj[i].scores;
-    //     var scoresLen = friendsObj[i].scores.length
+    console.log(friendsObj[0].scores)
 
-    //     for(var j = 0; j < scoresLen; j++){
-    //         if (usrScore[j] < friendScore[j]){
-    //             result = friendScore[j] - usrScore[j];
-    //         }else{
-    //             result = usrScore[j] - friendScore[j];
-    //         }
-    //     }
-    // }
+    for (var i = 0; i < arrLength; i++){
+    var friendsScore =friendsObj[i].scores;
+    counter++;
+   
+    
+        for (var j = i +1; j < usr.scores.length; j++){
+            if (parseInt(usrScore) < parseInt(friendsScore)){
+                result += parseInt(friendsScore) - parseInt(usrScore); 
+            }else {result += parseInt(usrScore) - parseInt(friendsScore)}
+
+           scoreTotals.push(result);
+
+        };
+        matchList.push({
+            name:dataObj[i].name,
+            photo:dataObj[i].photo,
+            result:scoreTotals,
+            counter:counter
+        })
+        
+        
+    };
+
+    
+
+    console.log(matchList)
+   
 }
 module.exports = Router;
 
