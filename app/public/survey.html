@@ -11,7 +11,7 @@
 
 
    <!-- Link to CSS -->
-   <link rel="stylesheet" href="styles.css">
+   <link rel="stylesheet" type='text/css' href="/styles.css"/>
 
     <title>Survey</title>
 </head>
@@ -38,13 +38,17 @@
       </h3>
       <h4>You look to others for support.</h4>
       <div >
-          
-          <div class='drop-down'  >
-          <button class='button-tab' align ='center'>
+          <style> 
+          .dropdown-item{background-color:rgb(212, 207, 201) ; width: 177.53px;  border: 1px solid black;}
+          .button-tab{background-color:rgb(212, 207, 201); width: 177.53px;  border: 1px solid black;}
+          .dropdown-options{ display:none; position:absolute;}
+          </style>
+          <div class='drop-down' >
+          <button class='options-tab' default='hidden' id = 'q1'>
             Select an Option
             </button>
-            <div class='dropdown-options'>
-            <button class="dropdown-item" type="button" value= '1' display='hide'>1(Strongly Disagree)</button>
+            <div class='dropdown-options' id='q1-dropdown' >
+            <button class="dropdown-item" type="button" value= '1'>1(Strongly Disagree)</button>
             <button class="dropdown-item" type="button" value= '2'>2</button>
             <button class="dropdown-item" type="button"value= '3'>3</button>
             <button class="dropdown-item" type="button"value= '4'>4</button>
@@ -57,6 +61,25 @@
         <strong>Question 2</strong>
       </h3>
       <h4>Smiling is a great exercise for your face.</h4>
+      <div >
+        <style> 
+        .dropdown-item{background-color:rgb(212, 207, 201) ; width: 177.53px;  border: 1px solid black;}
+        .button-tab{background-color:rgb(212, 207, 201); width: 177.53px;  border: 1px solid black;}
+        .dropdown-options{ display:none; position:absolute;}
+        </style>
+        <div class='drop-down'  >
+        <button class='options-tab' default='hidden' id = 'q2'>
+          Select an Option
+          </button>
+          <div class='dropdown-options' id='q2-dropdown'>
+          <button class="dropdown-item" type="button" value= '1'>1(Strongly Disagree)</button>
+          <button class="dropdown-item" type="button" value= '2'>2</button>
+          <button class="dropdown-item" type="button"value= '3'>3</button>
+          <button class="dropdown-item" type="button"value= '4'>4</button>
+          <button class="dropdown-item" type="button"value= '5'>5(Strongly Agree)</button>
+        </div>
+        </div>
+      </div>
 
        <h3>
         <strong>Question 3</strong>
@@ -102,6 +125,28 @@
     </div>
   </form>
     <script>
+
+
+$(".options-tab").on('click',function(e){
+  e.preventDefault();
+  var id = $(this).attr('id');
+   
+  if($(this).attr('default') === 'hidden'){
+    $('#'+id+'-dropdown').show();
+    $(this).attr('default','show');
+
+  }else if($(this).attr('default') === 'show'){
+    $('#'+id+'-dropdown').hide();
+    $(this).attr('default','hidden');
+  }
+ 
+});
+
+
+
+
+
+
 
   $('#submitted').on('click', function(event){
   event.preventDefault();
