@@ -84,7 +84,7 @@
        <h3>
         <strong>Question 3</strong>
         </h3>
-        <h4>The meaning of life is looking into my dog's eyes and understading that a simple mind is that which lives in bliss.
+        <h4>The meaning of life is looking into my dog's eyes and understading that a simple mind is that which lives in bliss.</h4>
           <div >
             <style> 
             .dropdown-item{background-color:rgb(212, 207, 201) ; width: 177.53px;  border: 1px solid black;}
@@ -255,10 +255,10 @@
           .options-tab{width: 177.53px;}
           </style>
           <div class='drop-down'  >
-          <button class='options-tab' default='hidden' id = 'q10'>
+          <button class='options-tab' default='hidden' id = 'q11'>
             Select an Option
             </button>
-            <div class='dropdown-options' id='q10-dropdown'>
+            <div class='dropdown-options' id='q11-dropdown'>
             <button class="dropdown-item" type="button" value= '1'>1(Strongly Disagree)</button>
             <button class="dropdown-item" type="button" value= '2'>2</button>
             <button class="dropdown-item" type="button"value= '3'>3</button>
@@ -267,6 +267,8 @@
           </div>
           </div>
         </div>
+
+
         <button id="submitted" type='submit' >Submit</button>
     </div>
   </form>
@@ -297,7 +299,7 @@ var id = $(this).parent().attr('id').slice(0,2);
 $('#'+id).text(val)
 
     $('#'+id+'-dropdown').hide();
-    // $('#id').attr('default','hidden');
+    $('#id').attr('default','hidden');
 
 });
 
