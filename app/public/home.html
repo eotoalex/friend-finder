@@ -27,18 +27,11 @@
       <hr class="my-4">
       <p>Answer a few basic questions. <br/></p>
       <p>Then find the friend with the greatest compatibility!</p>
-      <button id='pushButton' class="btn btn-primary btn-lg">Go to Survey</button>
+      <a href= 'survey' button id='pushButton' class="btn btn-primary btn-lg">Go to Survey</button></a>
     </div>
 
     <script>
-      // This constrols the go to survey button but it might not be best here to collect data because it is needed to switch to the survey page. Might need to rethink this.
-    $('#pushButton').on('click',function(event){
-      event.preventDefault();
-      $.get('/survey', function(data){
-        console.log(data)
-      });
-    });
-
+     
    
     </script>
 

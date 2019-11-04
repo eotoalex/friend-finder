@@ -41,7 +41,7 @@ var friendsData = friends.friends;
 // var userScore = friends.friends[i].scores[userScore]
 friendsData.push(req.body)
 
-// console.log(friendsData,newUser);
+
 
 checkingForMatches(friendsData,newUser);
 
@@ -57,40 +57,63 @@ function  checkingForMatches(friendsObj,usr){
     
     var arrLength = friendsObj.length
     var dataObj = friendsObj;
-    var matchList = [];
-    var scoreTotals=[];
+    
+   
     var result = 0;
-    var counter = 0;
+
+    console.log(arrLength)
 
     
-    console.log(friendsObj[0].scores)
+    
 
     for (var i = 0; i < arrLength; i++){
-    var friendsScore =friendsObj[i].scores;
-    counter++;
-   
+        var friendName = friendsObj[i].name;
+        var friendPhoto = friendsObj[i].photo;
+        var friendScore = friendsObj[i].scores;
+        var scoreTotals=[];
+        var matchList = [];
+        
+
+      
+        
+       
+        
     
-        for (var j = i +1; j < usr.scores.length; j++){
-            if (parseInt(usrScore) < parseInt(friendsScore)){
-                result += parseInt(friendsScore) - parseInt(usrScore); 
-            }else {result += parseInt(usrScore) - parseInt(friendsScore)}
+        for (var j = 0; j < 10; j++){
+           
+            result += parseInt(usrScore[j]) - friendScore[j];
+            if(Math.sign(result)===-1){
+                result += result * -1;
+            }
+            scoreTotals.push(result);
+            
 
-           scoreTotals.push(result);
-
-        };
+        }
+        var diff = sumArr (scoreTotals)
+        
+        
         matchList.push({
-            name:dataObj[i].name,
-            photo:dataObj[i].photo,
-            result:scoreTotals,
-            counter:counter
-        })
+            name:friendsObj[i].name,
+            photo:friendsObj[i].photo,
+            diff:scoreTotals,
+            
+        });
+        console.log(matchList);
         
-        
-    };
+       
+       
+    }
+   
+            // This function takes in an array and adds up all of its properties to determine the total.
+            function sumArr (arr){
+                var sum = 0;
+                for(var i = 0; i < arr.length; i++){
+                     sum = arr[i] + sum;
+                };
+                return sum;
+            };
 
     
-
-    console.log(matchList)
    
 }
 module.exports = Router;
