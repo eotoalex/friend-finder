@@ -1,22 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <script src="https://code.jquery.com/jquery.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://code.jquery.com/jquery.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
 
-   <!-- Link to CSS -->
-   <link rel="stylesheet" type='text/css' href="/styles.css"/>
+  
+        <title>Survey</title>
+  </head>
+    <body id='body-id'>
 
-    <title>Survey</title>
-</head>
-<body>
+      <!-- Modal -->
+     
+      <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="dismiss-id-c">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              ...
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal" id="dismiss-id">Close</button>
+              <button type="button" class="btn btn-primary" id="dismiss-id-s">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+  
+
     <div class='container'>
+
       <h2>Survey Questions</h2>
 
       <hr>
@@ -24,7 +49,8 @@
       <h3>
         <strong>About Me</strong>
       </h3>
-<form  method='POST' role='form' action='/api/friends'>
+
+      <form  method='POST' role='form' action='/api/friends'>
       <h4>Name (Required)</h4>
       <input type='text' id='name' class='form-control' required>
 
@@ -279,11 +305,16 @@
 
           </style>
         
-        <button id="submitted" type='submit' >Submit</button>
+        <button id="submitted" type='submit'>Submit</button>
     </div>
-  </form>
-    <script>
 
+
+
+
+  </form>
+
+
+    <script>
 
 $(".options-tab").on('click',function(e){
   e.preventDefault();
@@ -339,21 +370,58 @@ $('#'+id).text(val)
 
   ]
 }
-
-
-
 // This is where we perform the post request to the server and compare the new users data to data already in the system to come up with a match.
-
       $.post('/api/friends',newUser).
       then(function(data){
-      console.log(data[0]);
-      });
+      
+        console.log(data.body);
 
       });
+
+
+      // Rendering the Modal without the button after the user match is identified.
+      $('#body-id').attr('class','modal-open');
+      $('#modal-div').attr('class','modal-backdrop fade show');
+      $('#exampleModalCenter').attr('class', 'modal fade show');
+      $('#exampleModalCenter').attr('style','display:block');
+      // $('#exampleModalCenter').attr('aria-hidden', 'false');
+      
+      });
+
+      // The proceeding click events dismisses the modal after the user is finished with the information. This was just a quick fix until I can find a more efficient way to do this.
+      $('#dismiss-id').on('click', function(event){
+      $('#body-id').attr('class','null');
+      $('#modal-div').attr('class','null');
+      $('#exampleModalCenter').attr('class', 'null');
+      $('#exampleModalCenter').attr('style','display:none');
+      $('#exampleModalCenter').attr('aria-hidden', 'true');
+
+        });
+
+        $('#dismiss-id-c').on('click', function(event){
+      $('#body-id').attr('class','null');
+      $('#modal-div').attr('class','null');
+      $('#exampleModalCenter').attr('class', 'null');
+      $('#exampleModalCenter').attr('style','display:none');
+      $('#exampleModalCenter').attr('aria-hidden', 'true');
+
+        });
+
+        $('#dismiss-id-s').on('click', function(event){
+      $('#body-id').attr('class','null');
+      $('#modal-div').attr('class','null');
+      $('#exampleModalCenter').attr('class', 'null');
+      $('#exampleModalCenter').attr('style','display:none');
+      $('#exampleModalCenter').attr('aria-hidden', 'true');
+
+        });
 
     </script>
+   
+   <div id="modal-div"></div>
+
 </body>
 </html>
 
 
-</script>
+

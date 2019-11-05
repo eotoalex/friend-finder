@@ -1,4 +1,5 @@
-exports.friends = [{
+exports.friends = [
+    {
     name: 'Benny',
     photo:'url',
     scores:[

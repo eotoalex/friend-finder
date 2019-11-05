@@ -36,16 +36,15 @@ Router.post('/friends',urlencodedParser,function(req,res){
 
 var newUser = req.body;
 var friendsData = friends.friends;
-// var userIndex = arr.length;
 
-// var userScore = friends.friends[i].scores[userScore]
+
 friendsData.push(req.body)
 
 
 
 checkingForMatches(friendsData,newUser);
 
-res.json(newUser)
+res.send("hi");
 
 
 });
@@ -57,61 +56,67 @@ function  checkingForMatches(friendsObj,usr){
     
     var arrLength = friendsObj.length
     var dataObj = friendsObj;
-    
-   
-    // var result = 0;
+    var matchList = [];
 
-   
 
-    
-    
-
-    for (var i = 0; i < arrLength - 1; i++){
-        var friendScore = friendsObj[i].scores;
-        var scoreTotals=[];
-        var matchList = [];
+    for (var i = 0; i <= friendsObj.length - 1; i++){
         var result = 0;
-    
-        for (var j = 0; j < 10; j++){
-           
-            result += (parseInt(usrScore[j]) - friendScore[j]);
-            if(Math.sign(result)===-1){
-                result += (result * -1);
-            }
-            
-            
 
+        for (var j = 0; j < 10; j++){
+            if (parseFloat(usrObj.scores[j]) > friendsObj[i].scores[j]){
+            result += (parseFloat(usrObj.scores[j]) - friendsObj[i].scores[j]);}
+                else if(parseFloat(usrObj.scores[j]) < friendsObj[i].scores[j]){
+                    result += friendsObj[i].scores[j] - parseFloat(usrObj.scores[j])
+                }  
         }
-        
-        
-        // Debug the score totals so that the a correct numbers are subtracted and complete the modal with the images when the match is made.
+        if(friendsObj[i].name !== usrObj.name){
         matchList.push({
             name:friendsObj[i].name,
             photo:friendsObj[i].photo,
             diff:result,
-            
-        });
-
-        
-        
-    
-       
+           
+        });      
+    }  
+  
     }
-    console.log(matchList.length)
-   
-            // This function takes in an array and adds up all of its properties to determine the total.
+    sumArr(matchList);
            
         //    This function has to take in the object and compare the diff values between friends.
-            function sumArr (arr){
-                var sum = 0;
-                for(var i = 0; i < arr.length; i++){
-                     sum = arr[i] + sum;
-                };
-                return sum;
+            function sumArr (obj){
+                
+                var newArr = []; 
+                for(var i = 0; i < obj.length; i++){
+                    newArr.push(obj[i].diff);
+                }
+                var smllNum = Math.min(...newArr);
+                for(var j = 0; j < obj.length; j++){
+                    if(obj[j].diff === smllNum){
+                        
+                        console.log(obj[j].name);
+                        console.log(obj[j].photo);
+                        console.log(obj[j].diff);
+
+                        var match = {
+                            name:obj[j].name,
+                            photo:obj[j].photo,
+                            bio: obj[j].bio
+                        }
+
+                        
+
+
+                    }
+                }
+                console.log(obj);
+
+               
             };
 
     
    
 }
+
+
+
 module.exports = Router;
 
