@@ -52,6 +52,7 @@ var checkingForMatches = function (friendsObj,usr){
                 }  
         }
         if(friendsObj[i].name !== usrObj.name){
+
         matchList.push({
             name:friendsObj[i].name,
             photo:friendsObj[i].photo,
@@ -61,11 +62,13 @@ var checkingForMatches = function (friendsObj,usr){
     }  
   
     }
-     return sumArr(matchList);
+    var x = sumArr(matchList);
+    return x;
+    
            
         //    This function has to take in the object and compare the diff values between friends.
             function sumArr (obj){
-                
+                console.log(obj);
                 var newArr = []; 
                 for(var i = 0; i < obj.length; i++){
                     newArr.push(obj[i].diff);
@@ -92,7 +95,7 @@ var checkingForMatches = function (friendsObj,usr){
               
                
             };
-
+            
             
    
 }

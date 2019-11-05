@@ -382,6 +382,8 @@ $('#'+id).text(val)
         $('#match-name').text(name + ' is a perfect match for you!');
         $('#match-img').attr('src',photo);
 
+        console.log(name);
+        console.log(photo);
       });
 
 
@@ -401,7 +403,7 @@ $('#'+id).text(val)
       $('#exampleModalCenter').attr('class', 'null');
       $('#exampleModalCenter').attr('style','display:none');
       $('#exampleModalCenter').attr('aria-hidden', 'true');
-
+      location.reload();
         });
 
         $('#dismiss-id-c').on('click', function(event){
@@ -410,7 +412,7 @@ $('#'+id).text(val)
       $('#exampleModalCenter').attr('class', 'null');
       $('#exampleModalCenter').attr('style','display:none');
       $('#exampleModalCenter').attr('aria-hidden', 'true');
-
+      location.reload();
         });
 
         $('#dismiss-id-s').on('click', function(event){
@@ -419,7 +421,7 @@ $('#'+id).text(val)
       $('#exampleModalCenter').attr('class', 'null');
       $('#exampleModalCenter').attr('style','display:none');
       $('#exampleModalCenter').attr('aria-hidden', 'true');
-
+      location.reload();
         });
 
     </script>
