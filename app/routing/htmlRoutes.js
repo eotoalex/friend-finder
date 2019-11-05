@@ -1,15 +1,25 @@
 
 var path = require('path');
 var express = require('express');
-var Router = express.Router();
+var router = express.Router();
+
+
+router.get('/test', function (req,res){
+  res.send('Hello World from the /test route')
+}) 
 
 // This routes the user to the survey page.
-Router.get('/survey', function(req,res){
+router.get('/survey', function(req,res){
+  // res.send('Hello World')
 res.sendFile(path.join('/Users/HasBeenWriter/Desktop/Repos/friend_finder/app/public/survey.html'));
 });
 
+
+
+
+
 // Default catch all if the user inputs an identifiable id.
-Router.get('/:id', function(req, res, next){
+router.get('/:id', function(req, res, next){
     if (req.params.id === "1"){
       res.send(req.params.id);
     }else{
@@ -21,4 +31,4 @@ Router.get('/:id', function(req, res, next){
   });
 
 
-module.exports = Router;
+module.exports = router;
