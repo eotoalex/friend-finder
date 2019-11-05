@@ -8,24 +8,6 @@ var bodyParser = require('body-parser');
 var urlencodedParser = bodyParser.urlencoded({ extended: true });
 
 
-
-
-// Router.post('/friends/:id', function(req,res){
-// var newEntry = req.body;
-
-//     var obj = friends.friends;
-//     obj.push(newEntry);
-
-// res.json(newEntry)
-
-    
-
-    
-    
-// });
-
-
-
 // This takes the middleware .use and the user inputting /api then /friends to access the friends data object.
 Router.get('/friends', function(req,res){
     res.json (friends.friends);
@@ -38,26 +20,23 @@ var newUser = req.body;
 var friendsData = friends.friends;
 
 
+
 friendsData.push(req.body)
 
 
 
-checkingForMatches(friendsData,newUser);
-
-res.send("hi");
+// This sends the response object back to the user to see who they matched with.
+res.json(checkingForMatches(friendsData,newUser));
 
 
 });
 
-function  checkingForMatches(friendsObj,usr){
+var checkingForMatches = function (friendsObj,usr){
     
     var usrObj = usr;
-    var usrScore = usr.scores
-    
-    var arrLength = friendsObj.length
-    var dataObj = friendsObj;
     var matchList = [];
-
+    
+   
 
     for (var i = 0; i <= friendsObj.length - 1; i++){
         var result = 0;
@@ -79,7 +58,7 @@ function  checkingForMatches(friendsObj,usr){
     }  
   
     }
-    sumArr(matchList);
+     return sumArr(matchList);
            
         //    This function has to take in the object and compare the diff values between friends.
             function sumArr (obj){
@@ -92,27 +71,26 @@ function  checkingForMatches(friendsObj,usr){
                 for(var j = 0; j < obj.length; j++){
                     if(obj[j].diff === smllNum){
                         
-                        console.log(obj[j].name);
-                        console.log(obj[j].photo);
-                        console.log(obj[j].diff);
+                        
 
                         var match = {
                             name:obj[j].name,
                             photo:obj[j].photo,
-                            bio: obj[j].bio
+                            
                         }
 
+                       
                         
-
-
+                      return match;
                     }
+                    
                 }
-                console.log(obj);
-
+               
+              
                
             };
 
-    
+            
    
 }
 

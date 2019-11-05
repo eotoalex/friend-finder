@@ -14,20 +14,23 @@
         <title>Survey</title>
   </head>
     <body id='body-id'>
-
+      <style>
+      #match-img{height:200px; width:350px;}
+      </style>
       <!-- Modal -->
      
       <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+              <h5 class="modal-title" id='match-name'></h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="dismiss-id-c">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
-            <div class="modal-body">
-              ...
+            <div align='center'class="modal-body">
+              <img id='match-img' src='https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTdXYdQsVqDTsiLWiTgX9D2w8vuI9GDaMq2VweJb2RvBuqG9Izm' 
+              alt='The matching player.'/>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal" id="dismiss-id">Close</button>
@@ -373,8 +376,11 @@ $('#'+id).text(val)
 // This is where we perform the post request to the server and compare the new users data to data already in the system to come up with a match.
       $.post('/api/friends',newUser).
       then(function(data){
+        var name = data.name;
+        var photo = data.photo;
       
-        console.log(data.body);
+        $('#match-name').text(name + ' is a perfect match for you!');
+        $('#match-img').attr('src',photo);
 
       });
 
