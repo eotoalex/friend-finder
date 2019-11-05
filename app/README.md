@@ -17,8 +17,8 @@ When working with bootstrap to work with the drop down boxes and modals on the p
 
 
 ## Model
-[Demonstration](https://youtu.be/LVAEfEIVN9M)
+[Click me for a video demonstration](https://youtu.be/LVAEfEIVN9M)
 
 ## Link to Heroku:
-[Friend Finder](https://grisly-eyeballs-23418.herokuapp.com/)
+[Friend Finder site](https://grisly-eyeballs-23418.herokuapp.com/)
 
