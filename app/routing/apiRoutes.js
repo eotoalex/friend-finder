@@ -62,8 +62,8 @@ var checkingForMatches = function (friendsObj,usr){
     }  
   
     }
-    var x = sumArr(matchList);
-    return x;
+    var postResponse = sumArr(matchList);
+    return postResponse;
     
            
         //    This function has to take in the object and compare the diff values between friends.
