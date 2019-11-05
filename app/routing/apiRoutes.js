@@ -3,6 +3,9 @@ var express = require('express');
 var Router = express.Router();
 var bodyParser = require('body-parser');
 
+// TO DO: 
+// COMPLETE THE README, DEBUG THE MATCH IMAGE RENDER AND NAME, POST HOMEWORK.
+
 
 // User data needs to be parsed with this urlencodedParser in order to be accepted into the req.body property in the post request.
 var urlencodedParser = bodyParser.urlencoded({ extended: true });
