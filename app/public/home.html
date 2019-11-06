@@ -27,13 +27,13 @@
       <hr class="my-4">
       <p>Answer a few basic questions. <br/></p>
       <p>Then find the friend with the greatest compatibility!</p>
-      <a  button id='pushButton' class="btn btn-primary btn-lg">Go to Survey</button></a>
+      <a  button id='pushButton' class="btn btn-primary btn-lg" href='/survey'>Go to Survey</button></a>
     </div>
 
     <script> 
     $("#pushButton").on('click', function(){
       $.get( "/survey", function( data ) {
-  $( "body" ).html( data );
+  // $( "body" ).html( data );
  
 });
   });

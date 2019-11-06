@@ -1,7 +1,7 @@
 var express = require('express');
 var path = require ('path');
 var routes = require('./app/routing/apiRoutes.js');
-var htmlRoutes = require('./app/routing/htmlRoutes')
+var htmlRoutes = require('./app/routing/htmlRoutes.js')
 
 
 const app = express();
