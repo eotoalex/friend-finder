@@ -16,9 +16,6 @@ res.sendFile(path.join(__dirname,'../public/survey.html'));
 });
 
 
-
-
-
 // Default catch all if the user inputs an identifiable id.
 router.get('/:id', function(req, res, next){
     if (req.params.id === "1"){
