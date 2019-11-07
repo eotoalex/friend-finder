@@ -17,13 +17,13 @@ app.use("/", htmlRoutes);
 
 // This route the user to the home page.
 app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "./app/public/home.html"));
+    res.sendFile(path.join(__dirname, "/app/public/home.html"));
   });
 
  
   // This is the default setting for the web page.
   app.get('/:id', function(req, res){
-    res.sendFile(path.join(__dirname, "./app/public/home.html"));
+    res.sendFile(path.join(__dirname, "/app/public/home.html"));
 
   });
   
