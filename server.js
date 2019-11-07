@@ -12,13 +12,15 @@ var PORT = process.env.PORT || 3000;
 // This api route leads to the friends object information.
 app.use('/api', routes );
 // This routes will check for user input after the initial slash to ensure that their entry is recognizable, if not the user is routed back to the home page by default.
-app.use("/", htmlRoutes);
 
 
 // This route the user to the home page.
 app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "/app/public/home.html"));
-  });
+  res.sendFile(path.join(__dirname, "/app/public/home.html"));
+});
+app.use("/", htmlRoutes);
+
+
 
  
   // This is the default setting for the web page.
