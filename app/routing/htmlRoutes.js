@@ -11,7 +11,7 @@ var router = express.Router();
 // This routes the user to the survey page.
 router.get('/survey', function(req,res){
   // res.send('Hello World')
-res.sendFile(path.join('/Users/HasBeenWriter/Desktop/Repos/friend_finder/app/public/survey.html'));
+res.sendFile(path.join(__dirname,'../public/survey.html'));
 
 });
 
