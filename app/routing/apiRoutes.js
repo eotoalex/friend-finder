@@ -3,18 +3,12 @@ var express = require('express');
 var Router = express.Router();
 var bodyParser = require('body-parser');
 
-// TO DO: 
-// COMPLETE THE README, DEBUG THE MATCH IMAGE RENDER AND NAME, POST HOMEWORK.
-
-
 // User data needs to be parsed with this urlencodedParser in order to be accepted into the req.body property in the post request.
 var urlencodedParser = bodyParser.urlencoded({ extended: true });
-
 
 // This takes the middleware .use and the user inputting /api then /friends to access the friends data object.
 Router.get('/friends', function(req,res){
     res.json (friends.friends);
- 
 });
 
 Router.post('/friends',urlencodedParser,function(req,res){
@@ -22,9 +16,7 @@ Router.post('/friends',urlencodedParser,function(req,res){
 var newUser = req.body;
 var friendsData = friends.friends;
 
-
-
-friendsData.push(req.body)
+friendsData.push(req.body);
 
 
 
@@ -39,8 +31,6 @@ var checkingForMatches = function (friendsObj,usr){
     var usrObj = usr;
     var matchList = [];
     
-   
-
     for (var i = 0; i <= friendsObj.length - 1; i++){
         var result = 0;
 

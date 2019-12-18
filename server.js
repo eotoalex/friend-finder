@@ -20,9 +20,6 @@ app.get("/", function(req, res) {
 });
 app.use("/", htmlRoutes);
 
-
-
- 
   // This is the default setting for the web page.
   app.get('/:id', function(req, res){
     res.sendFile(path.join(__dirname, "/app/public/home.html"));

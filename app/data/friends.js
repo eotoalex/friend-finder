@@ -4,16 +4,16 @@ exports.friends = [
     photo:'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR9_TG1q2TX5Dp4EQPj07Jum4EpzZeEJwcO4yG0W7QQbUI8dc7u',
     
     scores:[
-    5,
-    3,
-    4,
-    4,
-    3,
     2,
-    3,
-    3,
     2,
-    5,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
     ]
 },
 {
@@ -21,16 +21,16 @@ exports.friends = [
     photo:'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRtBxYg8lIoNVpfI5KA_C5LuniIztCobk16acNbw3zDaD2GxzOY',
    
     scores:[
-        5,
         3,
-        4,
-        1,
         3,
-        4,
-        5,
-        4,
         3,
-        5,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
     ]
 },
 
@@ -39,15 +39,15 @@ exports.friends = [
     photo:'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQHKN95bd9juanqfKJpviEghGIyWJ5mXaLP29yabVooFqDKNPel',
    
     scores:[
-    3,
-    1,
+    4,
+    4,
+    5,
+    4,
     5,
     5,
-    1,
+    4,
     5,
-    3,
-    1,
-    2,
+    4,
     4,
     ]
 },
@@ -56,15 +56,15 @@ exports.friends = [
     photo:'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcToQodSl3lfh9XpHn6Kn_YbljtPiBg2OQhrYtA31uf588VTUl6n',
    
     scores:[
-    4,
-    1,
+    5,
+    5,
     4,
     5,
-    3,
-    3,
-    3,
+    4,
+    4,
     5,
-    2,
+    5,
+    4,
     5,
     ]
 },
@@ -75,14 +75,14 @@ exports.friends = [
     scores:[
     4,
     5,
-    1,
-    2,
-    3,
-    1,
-    2,
+    4,
     5,
     4,
-    3,
+    5,
+    4,
+    5,
+    4,
+    5,
     ]
 },
 {
