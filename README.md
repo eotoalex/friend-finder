@@ -3,12 +3,12 @@
 Having an issue finding friends? Friend Finder takes finding friends to the next level, by matching you with a partner in our database that shares similar responses to you. There is no substitute for a good friend! Happy coding friends.
 
 ## Technologies used:
-*NodeJS
-*MySQL
-*ExpressJS
-*HTML
-*CSS
-*BootStrap
+* NodeJS
+* MySQL
+* ExpressJS
+* HTML
+* CSS
+* BootStrap
 
 ## My role:
 This app uses routers from the server to use in the public files, which took me a bit of time to understand how to use, given the fact that this is the first time I've done something like this. After a while I was able to create some middleware on the server page to have public files use the server to access api information, update server data and outputting the user match after they click on the submit button. Retreiving the data from the post request was coming back undefined until I began to designate areas where I convert JSON to more usable objects and vice versa.
